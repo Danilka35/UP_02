@@ -1,0 +1,36 @@
+﻿<Window x:Class="ChitaiGorod.AddTovarWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChitaiGorod"
+        mc:Ignorable="d"
+        Title="Добавление нового товара" Height="450" Width="800">
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label Width="250" Content="Наименование" />
+            <TextBox x:Name="nameTextBox" />
+            <Label Content="Единица измерения" />
+            <ComboBox x:Name="edIzmereniaComboBox" />
+            <Label Content="Цена" />
+            <TextBox x:Name="priceTextBox" />
+            <Label Content="Поставщик" />
+            <ComboBox x:Name="postavchikComboBox" />
+            <Label Content="Производитель" />
+            <ComboBox x:Name="proizvoditelComboBox" />
+            <Label Content="Категория" />
+            <ComboBox x:Name="categoryComboBox" />
+            <Label Content="Действующая скидка" />
+            <TextBox x:Name="skidkaTextBox" />
+            <Label Content="Количество на складе" />
+            <TextBox x:Name="quantityTextBox" />
+            <Label x:Name="opisanieTExtBox" />
+            <TextBlock>
+            <TextBox />
+            </TextBlock>
+
+
+
+        </StackPanel>
+    </Grid>
+</Window>

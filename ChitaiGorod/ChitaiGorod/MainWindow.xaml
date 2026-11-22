@@ -1,0 +1,25 @@
+﻿<Window x:Class="ChitaiGorod.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChitaiGorod"
+        mc:Ignorable="d"
+        Title="Читай Город" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Button x:Name="nazadButton" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Назад" Margin="30,0,0,0" Padding="5" Click="nazadButton_Click"/>
+                <Label x:Name="namePage" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0" FontSize="14" FontWeight="Bold"/>
+            </StackPanel>            
+            <Label x:Name="fioLabel" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,30,0" FontSize="14" />
+        </Grid>
+
+        <Frame Grid.Row="1" x:Name="mainFrame" NavigationUIVisibility="Hidden" Navigated="mainFrame_Navigated"/>
+    </Grid>
+</Window>

@@ -1,0 +1,71 @@
+﻿<Page x:Class="ChitaiGorod.Pages.ZakazsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ChitaiGorod.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ZakazsPage" Background="White" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="adminPanelGrid" Grid.Row="0" Height="60">
+            <Button x:Name="addZakazButton" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Добавить заказ" Padding="5" Margin="0,0,30,0" />
+        </Grid>
+
+        <ListView x:Name="spisokZakazsListView" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Grid.Row="1" Margin="15">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="1" Padding="10" Margin="0,5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="130"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0" VerticalAlignment="Center" Margin="5,0">
+                                <TextBlock FontWeight="Bold" FontSize="14" TextWrapping="Wrap">
+                        <Run Text="Артикул заказа: "/>
+                        <Run Text="{Binding Id}"/>
+                                </TextBlock>
+
+                                <TextBlock TextWrapping="Wrap" Margin="0,4,0,0">
+                        <Run Text="Статус заказа: "/>
+                        <Run Text="{Binding IdStatusNavigation.Name}"/>
+                                </TextBlock>
+
+                                <TextBlock>
+                        <Run Text="Адрес пункта выдачи (текст): "/>
+                        <Run Text="{Binding IdPunktDostavkiNavigation.Address}"/>
+                                </TextBlock>
+
+                                <TextBlock>
+                        <Run Text="Дата заказа: "/>
+                        <Run Text="{Binding DateOrder, StringFormat={}{0:dd.MM.yyyy}}"/>
+                                </TextBlock>
+
+                            </StackPanel>
+
+                            <Border Grid.Column="1" BorderThickness="1" Margin="10,0,0,0">
+                                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <TextBlock Text="Дата заказа" TextAlignment="Center"/>
+                                    <TextBlock Text="{Binding DateDostavka, StringFormat={}{0:dd.MM.yyyy}}" FontSize="16" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
